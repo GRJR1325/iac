@@ -1,13 +1,13 @@
 # Aplicacion 1
 services:
   -type: web
-    name: aplicacion_web
+    name: aplicacion_web2
     runtime: python
     repo: https://github.com/GRJR1325/aplicacion_web
     plan: free
     region: oregon
     buildCommand: pip install -r requirements.txt
-    startCommand: python3 'web/app.py'
+    startCommand: python3 web/app.py
       
   - type: web
     name: aplicacion_rest
@@ -16,5 +16,5 @@ services:
     plan: free
     region: oregon
     buildCommand: pip install -r requirements.txt
-    startCommand: fastapi run app/main.py
+    startCommand: python -m uvicorn app.main:app --reload
   version: "1"
