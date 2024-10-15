@@ -1,20 +1,21 @@
 # Aplicacion 1
 services:
-  -type: web
-    name: aplicacion_web2
-    runtime: python
-    repo: https://github.com/GRJR1325/aplicacion_web
-    plan: free
-    region: oregon
-    buildCommand: pip install -r requirements.txt
-    startCommand: python3 web/app.py
-      
-  - type: web
-    name: aplicacion_rest
-    runtime: python
-    repo: https://github.com/GRJR1325/api_rest
-    plan: free
-    region: oregon
-    buildCommand: pip install -r requirements.txt
-    startCommand: python -m uvicorn app.main:app --reload
-  version: "1"
+- type: web
+  name: app_webpy
+  runtime: python
+  repo: https://github.com/GRJR1325/aplicacion_web
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: python3 web/app.py
+
+- type: web
+  name: api_rest
+  runtime: python
+  repo: https://github.com/GRJR1325/api_rest
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: python -m uvicorn app.main:app --reload
+
+version: "1"
