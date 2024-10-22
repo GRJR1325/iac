@@ -11,7 +11,7 @@ services:
 
 - type: web
   name: api_rest
-  runtime: python
+  runtime: python3.10
   repo: https://github.com/GRJR1325/api_rest
   plan: free
   region: oregon
